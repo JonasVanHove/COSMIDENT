@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COSMIDENT.Migrations
 {
     [DbContext(typeof(InventoryContext))]
-    [Migration("20211011065544_InitialDBSetup")]
+    [Migration("20211014110327_InitialDBSetup")]
     partial class InitialDBSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -29,6 +29,7 @@ namespace COSMIDENT
         {
             services.AddControllersWithViews();
             // Connection
+            // services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
             services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
         }
 
