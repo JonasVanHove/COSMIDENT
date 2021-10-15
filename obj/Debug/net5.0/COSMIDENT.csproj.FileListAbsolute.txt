@@ -148,3 +148,5 @@ D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Unit\Index.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Unit\Create.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Unit\Details.cshtml.g.cs
+D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Unit\Edit.cshtml.g.cs
+D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Unit\Delete.cshtml.g.cs

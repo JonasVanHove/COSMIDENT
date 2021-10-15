@@ -48,11 +48,73 @@ namespace COSMIDENT.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public  IActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             Unit unit = GetUnit(id);
             return View(unit);
         }
+
+        public IActionResult Edit(int id)
+        {
+            Unit unit = GetUnit(id);
+            return View(unit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Unit unit)
+        {
+            try
+            {
+                _context.Units.Attach(unit);
+                _context.Entry(unit).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch
+            {
+
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Unit unit = GetUnit(id);
+            return View(unit);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Unit unit)
+        {
+            try
+            {
+                _context.Units.Attach(unit);
+                _context.Entry(unit).State = EntityState.Deleted;
+                _context.SaveChanges();
+            }
+            catch
+            {
+
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+/*        public IActionResult Plus(int id)
+        {
+            Unit unit = GetUnit(id);
+            try
+            {
+                _context.Units.Attach(unit);
+                _context.Entry(unit).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch
+            {
+
+            }
+            return View(unit);
+        }*/
 
         private Unit GetUnit(int id)
         {
