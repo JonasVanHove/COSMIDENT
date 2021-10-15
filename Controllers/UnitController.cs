@@ -16,7 +16,7 @@ namespace COSMIDENT.Controllers
         {
             List<Unit> units = _context.Units.ToList();
 
-            return View();
+            return View(units);
         }
 
         private readonly InventoryContext _context;
@@ -26,5 +26,38 @@ namespace COSMIDENT.Controllers
             _context = context;
         }
 
+        public IActionResult Create()
+        {
+            Unit unit = new Unit();
+            return View(unit);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Unit unit)
+        {
+            try
+            {
+                _context.Units.Add(unit);
+                _context.SaveChanges();
+            }
+            catch
+            {
+
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public  IActionResult Details(int id)
+        {
+            Unit unit = GetUnit(id);
+            return View(unit);
+        }
+
+        private Unit GetUnit(int id)
+        {
+            Unit unit = _context.Units.Where(u => u.Id == id).FirstOrDefault();
+            return unit;
+        }
     }
 }
