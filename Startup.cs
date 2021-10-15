@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using COSMIDENT.Models;
 using COSMIDENT.Data;
+using COSMIDENT.Interfaces;
+using COSMIDENT.Repositories;
 
 namespace COSMIDENT
 {
@@ -28,6 +30,8 @@ namespace COSMIDENT
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IUnit, UnitRepository>();
+
             // Connection
             // services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
             services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));

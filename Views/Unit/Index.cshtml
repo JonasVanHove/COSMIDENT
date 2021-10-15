@@ -24,8 +24,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
-            <th></th>
-            <th></th>
+@*            <th></th>
+*@            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -43,10 +43,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
-            <td>
+@*            <td>
                 <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">+</a>
                 <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">-</a>
-            </td>
+            </td>*@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using COSMIDENT.Data;
 using COSMIDENT.Models;
+using COSMIDENT.Interfaces;
 
 namespace COSMIDENT.Controllers
 {
@@ -14,16 +15,15 @@ namespace COSMIDENT.Controllers
     {
         public IActionResult Index()
         {
-            List<Unit> units = _context.Units.ToList();
-
+            List<Unit> units = _unitRepo.GetItems(); //_context.Units.ToList();
             return View(units);
         }
 
-        private readonly InventoryContext _context;
+        private readonly IUnit _unitRepo;
 
-        public UnitController(InventoryContext context)
+        public UnitController(IUnit unitrepo)
         {
-            _context = context;
+            _unitRepo = unitrepo;
         }
 
         public IActionResult Create()
@@ -37,8 +37,7 @@ namespace COSMIDENT.Controllers
         {
             try
             {
-                _context.Units.Add(unit);
-                _context.SaveChanges();
+                unit = _unitRepo.Create(unit);
             }
             catch
             {
@@ -50,13 +49,13 @@ namespace COSMIDENT.Controllers
 
         public IActionResult Details(int id)
         {
-            Unit unit = GetUnit(id);
+            Unit unit = _unitRepo.GetUnit(id);
             return View(unit);
         }
 
         public IActionResult Edit(int id)
         {
-            Unit unit = GetUnit(id);
+            Unit unit = _unitRepo.GetUnit(id);
             return View(unit);
         }
 
@@ -65,9 +64,7 @@ namespace COSMIDENT.Controllers
         {
             try
             {
-                _context.Units.Attach(unit);
-                _context.Entry(unit).State = EntityState.Modified;
-                _context.SaveChanges();
+                unit = _unitRepo.Edit(unit);
             }
             catch
             {
@@ -79,7 +76,7 @@ namespace COSMIDENT.Controllers
 
         public IActionResult Delete(int id)
         {
-            Unit unit = GetUnit(id);
+            Unit unit = _unitRepo.GetUnit(id);
             return View(unit);
         }
 
@@ -88,9 +85,7 @@ namespace COSMIDENT.Controllers
         {
             try
             {
-                _context.Units.Attach(unit);
-                _context.Entry(unit).State = EntityState.Deleted;
-                _context.SaveChanges();
+                unit = _unitRepo.Delete(unit);
             }
             catch
             {
@@ -100,26 +95,5 @@ namespace COSMIDENT.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-/*        public IActionResult Plus(int id)
-        {
-            Unit unit = GetUnit(id);
-            try
-            {
-                _context.Units.Attach(unit);
-                _context.Entry(unit).State = EntityState.Modified;
-                _context.SaveChanges();
-            }
-            catch
-            {
-
-            }
-            return View(unit);
-        }*/
-
-        private Unit GetUnit(int id)
-        {
-            Unit unit = _context.Units.Where(u => u.Id == id).FirstOrDefault();
-            return unit;
-        }
     }
 }
