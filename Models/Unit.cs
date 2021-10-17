@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace COSMIDENT.Models
 {
+    public enum SortOrder { Ascending=0,Descending=1}
     public class Unit
     {
         public int Id { get; set; }

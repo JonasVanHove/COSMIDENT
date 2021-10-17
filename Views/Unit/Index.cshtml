@@ -2,7 +2,11 @@
 
 @{
     ViewData["Title"] = "Products";
+
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <h1>Products</h1>
 
@@ -13,19 +17,35 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Barcode)
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("barcode").SortExpression">
+                    @Html.DisplayNameFor(model => model.Barcode)
+                </a>
+                <i class="@sortModel.GetColumn("barcode").SortIcon" arial-hidden="true"></i>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                    @Html.DisplayNameFor(model => model.Name)
+                </a>
+                <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
+                    @Html.DisplayNameFor(model => model.Description)
+                </a>
+                <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("quantity").SortExpression">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </a>
+                <i class="@sortModel.GetColumn("quantity").SortIcon" arial-hidden="true"></i>
+
             </th>
-@*            <th></th>
-*@            <th></th>
+            @*            <th></th>
+            *@
+            <th></th>
         </tr>
     </thead>
     <tbody>
