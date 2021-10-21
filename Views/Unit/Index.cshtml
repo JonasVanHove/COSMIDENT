@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<COSMIDENT.Models.Unit>
 
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = "Producten";
 
     SortModel sortModel = (SortModel)ViewData["sortModel"];
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<h1>Products</h1>
+<h1>Producten</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Toevoegen</a>
 </p>
 <table class="table">
     <thead>
@@ -25,20 +25,23 @@
             </th>
             <th>
                 <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
-                    @Html.DisplayNameFor(model => model.Name)
+                    @*@Html.DisplayNameFor(model => model.Name)*@
+                    Naam
                 </a>
                 <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
 
             </th>
             <th>
                 <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
-                    @Html.DisplayNameFor(model => model.Description)
+                    @*@Html.DisplayNameFor(model => model.Description)*@
+                    Beschrijving
                 </a>
                 <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
             </th>
             <th>
                 <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("quantity").SortExpression">
-                    @Html.DisplayNameFor(model => model.Quantity)
+                    @*@Html.DisplayNameFor(model => model.Quantity)*@
+                    Hoeveelheid
                 </a>
                 <i class="@sortModel.GetColumn("quantity").SortIcon" arial-hidden="true"></i>
 
@@ -68,9 +71,9 @@
                 <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">-</a>
             </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Edit</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Wijzig</a> |
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Verwijder</a>
             </td>
         </tr>
 }

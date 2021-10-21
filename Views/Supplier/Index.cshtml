@@ -1,24 +1,25 @@
 ﻿@model IEnumerable<COSMIDENT.Models.Supplier>
 
 @{
-    ViewData["Title"] = "Suppliers";
+    ViewData["Title"] = "Leveranciers";
 
     SortModel sortModel = (SortModel)ViewData["sortModel"];
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<h1>Suppliers</h1>
+<h1>Leveranciers</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Toevoegen</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
-                    @Html.DisplayNameFor(model => model.SupplierName)
+                    @*@Html.DisplayNameFor(model => model.SupplierName)*@
+                    Naam
                 </a>
                 <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
 
@@ -42,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Edit</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Wijzig</a> |
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Verwijder</a>
             </td>
         </tr>
 }
