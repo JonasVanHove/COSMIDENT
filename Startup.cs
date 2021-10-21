@@ -31,6 +31,7 @@ namespace COSMIDENT
         {
             services.AddControllersWithViews();
             services.AddScoped<IUnit, UnitRepository>();
+            services.AddScoped<ISupplier, SupplierRepository>();
 
             // Connection
             // services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));

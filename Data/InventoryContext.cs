@@ -15,5 +15,6 @@ namespace COSMIDENT.Data
         }
 
         public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
     }
 }
