@@ -41,10 +41,8 @@ namespace COSMIDENT.Repositories
             return unit;
         }
 
-        public List<Unit> GetItems(string SortProperty, SortOrder sortOrder)
+        private List<Unit> DoSort(List<Unit> units, string SortProperty, SortOrder sortOrder)
         {
-            List<Unit> units = _context.Units.ToList();
-
             if (SortProperty.ToLower() == "name")
             {
                 if (sortOrder == SortOrder.Ascending)
@@ -81,6 +79,20 @@ namespace COSMIDENT.Repositories
                     units = units.OrderByDescending(q => q.Quantity).ToList();
                 }
             }
+            return units;
+        }
+        public List<Unit> GetItems(string SortProperty, SortOrder sortOrder,string SearchText="")
+        {
+            List<Unit> units;
+
+            if(SearchText != "")
+            {
+                units = _context.Units.Where(n=>n.Name.Contains(SearchText)||n.Description.Contains(SearchText)).ToList();
+            }
+            else
+                units = _context.Units.ToList();
+
+            units = DoSort(units, SortProperty, sortOrder);
             return units;
         }
 

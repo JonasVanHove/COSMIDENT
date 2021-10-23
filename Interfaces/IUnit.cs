@@ -8,7 +8,7 @@ namespace COSMIDENT.Interfaces
 {
     public interface IUnit
     {
-        List<Unit> GetItems(string SortProperty, SortOrder sortOrder);
+        List<Unit> GetItems(string SortProperty, SortOrder sortOrder, string SearchText="");
         Unit GetUnit(int id);
         Unit Create(Unit unit);
         Unit Edit(Unit unit);

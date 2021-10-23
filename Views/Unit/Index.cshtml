@@ -13,6 +13,16 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Toevoegen</a>
 </p>
+
+<div class="col-4 p-0 justify-content-end mt-1 mb-3">
+    <form asp-action="index">
+        <span class="btn-group">
+            <input class="form-control" type="text" name="SearchText" value="@ViewBag.SearchText" placeholder="Zoekwoord" />
+            <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Zoeken"/>
+        </span>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>

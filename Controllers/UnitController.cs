@@ -19,7 +19,7 @@ namespace COSMIDENT.Controllers
             _unitRepo = unitrepo;
         }
 
-        private SortModel ApplySort(string sortExpression)
+        private SortModel ApplySort(string sortExpression="")
         {
             ViewData["SortParamName"] = "name";
             ViewData["SortParamDesc"] = "description";
@@ -94,7 +94,7 @@ namespace COSMIDENT.Controllers
             return sortModel;
         }
 
-        public IActionResult Index(string sortExpression="")
+        public IActionResult Index(string sortExpression="", string SearchText = "")
         {
             SortModel sortModel = new SortModel();
 
@@ -105,7 +105,7 @@ namespace COSMIDENT.Controllers
             sortModel.ApplySort(sortExpression);
             ViewData["sortModel"] = sortModel;
 
-            List<Unit> units = _unitRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder); //_context.Units.ToList();
+            List<Unit> units = _unitRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder, SearchText); //_context.Units.ToList();
             return View(units);
         }
 
