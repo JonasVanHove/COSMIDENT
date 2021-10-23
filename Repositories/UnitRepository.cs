@@ -87,7 +87,7 @@ namespace COSMIDENT.Repositories
 
             if(SearchText != "")
             {
-                units = _context.Units.Where(n=>n.Name.Contains(SearchText)||n.Description.Contains(SearchText)).ToList();
+                units = _context.Units.Where(n=>n.Name.Contains(SearchText) || n.Description.Contains(SearchText) || n.Barcode.Contains(SearchText)).ToList();
             }
             else
                 units = _context.Units.ToList();
