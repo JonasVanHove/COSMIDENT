@@ -41,10 +41,8 @@ namespace COSMIDENT.Repositories
             return supplier;
         }
 
-        public List<Supplier> GetItems(string SortProperty, SortOrder sortOrder)
+        public List<Supplier> DoSort(List<Supplier> suppliers, string SortProperty, SortOrder sortOrder)
         {
-            List<Supplier> suppliers = _context.Suppliers.ToList();
-
             if (SortProperty.ToLower() == "name")
             {
                 if (sortOrder == SortOrder.Ascending)
@@ -63,6 +61,21 @@ namespace COSMIDENT.Repositories
                     suppliers = suppliers.OrderByDescending(e => e.Email).ToList();
                 }
             }
+            return suppliers;
+        }
+
+        public List<Supplier> GetItems(string SortProperty, SortOrder sortOrder, string SearchText = "")
+        {
+            List<Supplier> suppliers;
+
+            if (SearchText != "")
+            {
+                suppliers = _context.Suppliers.Where(n => n.SupplierName.Contains(SearchText) || n.Email.Contains(SearchText)).ToList();
+            }
+            else
+                suppliers = _context.Suppliers.ToList();
+
+            suppliers = DoSort(suppliers, SortProperty, sortOrder);
             return suppliers;
         }
 

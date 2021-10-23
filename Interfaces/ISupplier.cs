@@ -8,7 +8,7 @@ namespace COSMIDENT.Interfaces
 {
     public interface ISupplier
     {
-        List<Supplier> GetItems(string SortProperty, SortOrder sortOrder);
+        List<Supplier> GetItems(string SortProperty, SortOrder sortOrder, string SearchText="");
         Supplier GetSupplier(int id);
         Supplier Create(Supplier supplier);
         Supplier Edit(Supplier supplier);

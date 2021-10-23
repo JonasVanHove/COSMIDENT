@@ -19,7 +19,7 @@ namespace COSMIDENT.Controllers
             _supplierRepo = supplierrepo;
         }
 
-        private SortModel ApplySort(string sortExpression)
+        private SortModel ApplySort(string sortExpression="")
         {
             ViewData["SortParamName"] = "name";
             ViewData["SortParamDesc"] = "email";
@@ -62,7 +62,7 @@ namespace COSMIDENT.Controllers
             return sortModel;
         }
 
-        public IActionResult Index(string sortExpression="")
+        public IActionResult Index(string sortExpression="", string SearchText="")
         {
             SortModel sortModel = new SortModel();
 
@@ -71,7 +71,7 @@ namespace COSMIDENT.Controllers
             sortModel.ApplySort(sortExpression);
             ViewData["sortModel"] = sortModel;
 
-            List<Supplier> suppliers = _supplierRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder); 
+            List<Supplier> suppliers = _supplierRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder,SearchText); 
             return View(suppliers);
         }
 
