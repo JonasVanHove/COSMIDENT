@@ -115,6 +115,8 @@ namespace COSMIDENT.Controllers
             pager.SortExpression = sortExpression;
             this.ViewBag.Pager = pager;
 
+            TempData["CurrentPage"] = pg;
+
             //units = units.Skip((pg - 1) * pageSize).Take(pageSize).ToList();
 
 
@@ -145,6 +147,7 @@ namespace COSMIDENT.Controllers
         public IActionResult Details(int id)
         {
             Unit unit = _unitRepo.GetUnit(id);
+
             return View(unit);
         }
 
@@ -166,7 +169,12 @@ namespace COSMIDENT.Controllers
 
             }
 
-            return RedirectToAction(nameof(Index));
+            int currentPage = 1;
+            if (TempData["CurrentPage"] != null)
+            {
+                currentPage = (int)TempData["CurrentPage"];
+            }
+            return RedirectToAction(nameof(Index), new { pg = currentPage });
         }
 
         public IActionResult Delete(int id)

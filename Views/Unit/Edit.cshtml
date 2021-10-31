@@ -2,6 +2,13 @@
 
 @{
     ViewData["Title"] = "Wijzig";
+
+    int pg = 1;
+    if(TempData["CurrentPage"] != null)
+    {
+        pg = (int)TempData["CurrentPage"];
+        TempData["CurrentPage"] = pg;
+    }
 }
 
 <h1>Edit</h1>
