@@ -71,6 +71,8 @@ namespace COSMIDENT.Controllers
             sortModel.ApplySort(sortExpression);
             ViewData["sortModel"] = sortModel;
 
+            ViewBag.SearchText = SearchText;
+
             List<Supplier> suppliers = _supplierRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder,SearchText); 
             return View(suppliers);
         }

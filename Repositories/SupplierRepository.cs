@@ -68,7 +68,7 @@ namespace COSMIDENT.Repositories
         {
             List<Supplier> suppliers;
 
-            if (SearchText != "")
+            if (SearchText != "" && SearchText != null)
             {
                 suppliers = _context.Suppliers.Where(n => n.SupplierName.Contains(SearchText) || n.Email.Contains(SearchText)).ToList();
             }

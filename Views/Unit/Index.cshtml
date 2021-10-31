@@ -4,6 +4,8 @@
     ViewData["Title"] = "Producten";
 
     SortModel sortModel = (SortModel)ViewData["sortModel"];
+
+    PagerModel pager = ViewBag.Pager;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,13 +16,11 @@
     <a asp-action="Create" class="btn btn-primary">Toevoegen</a>
 </p>
 
-<div class="col-4 p-0 justify-content-end mt-1 mb-3">
-    <form asp-action="index">
-        <span class="btn-group">
-            <input class="form-control" type="text" name="SearchText" value="@ViewBag.SearchText" placeholder="Zoekwoord" />
-            <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Zoeken"/>
-        </span>
-    </form>
+
+<div class="row">
+    <div class="col-12">
+        <partial name="_topBar" model="@pager"/>
+    </div>
 </div>
 
 <table class="table">
@@ -89,3 +89,9 @@
 }
     </tbody>
 </table>
+
+<div class="row">
+    <div class="col-12">
+        <partial name="_bottomBar" model="@pager" />
+    </div>
+</div>

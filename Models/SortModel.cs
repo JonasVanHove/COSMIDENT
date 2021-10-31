@@ -11,6 +11,9 @@ namespace COSMIDENT.Models
         private string DownIcon = "fa fa-arrow-down";
         public string SortedProperty { get; set; }
         public SortOrder SortedOrder { get; set; }
+
+        public string SortedExpression { get; private set; }
+
         private List<SortableColumn> sortableColumns = new List<SortableColumn>();
         public void AddColumn(string colname, bool IsDefaultColumn=false)
         {
@@ -45,9 +48,15 @@ namespace COSMIDENT.Models
             //this.GetColumn("quantity").SortIcon = "";
             //this.GetColumn("quantity").SortExpression = "quantity";
 
+            if(sortExpression == null)
+            {
+                sortExpression = "";
+            }
+
             if (sortExpression == "")
                 sortExpression = this.SortedProperty;
             sortExpression = sortExpression.ToLower();
+            SortedExpression = sortExpression;
 
             foreach(SortableColumn sortableColumn in this.sortableColumns)
             {

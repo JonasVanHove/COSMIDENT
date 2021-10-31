@@ -311,3 +311,6 @@ D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Supplier\Details.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Supplier\Edit.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Supplier\Index.cshtml.g.cs
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\COSMIDENT.csprojAssemblyReference.cache
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Shared\_topBar.cshtml.g.cs
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Shared\_bottomBar.cshtml.g.cs
