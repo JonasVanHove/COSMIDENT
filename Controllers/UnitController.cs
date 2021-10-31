@@ -94,7 +94,7 @@ namespace COSMIDENT.Controllers
             return sortModel;
         }
 
-        public IActionResult Index(string sortExpression="", string SearchText = "")
+        public IActionResult Index(string sortExpression="", string SearchText = "", int pageSize=5, int pg=1)
         {
             SortModel sortModel = new SortModel();
 
@@ -105,7 +105,19 @@ namespace COSMIDENT.Controllers
             sortModel.ApplySort(sortExpression);
             ViewData["sortModel"] = sortModel;
 
-            List<Unit> units = _unitRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder, SearchText); //_context.Units.ToList();
+            ViewBag.SearchText = SearchText;
+
+            PaginatedList<Unit> units = _unitRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder, SearchText, pg, pageSize); //_context.Units.ToList();
+
+            int totRecs = ((PaginatedList<Unit>)units).TotalRecords;
+
+            var pager = new PagerModel(units.TotalRecords, pg, pageSize);
+            pager.SortExpression = sortExpression;
+            this.ViewBag.Pager = pager;
+
+            //units = units.Skip((pg - 1) * pageSize).Take(pageSize).ToList();
+
+
             return View(units);
         }
 

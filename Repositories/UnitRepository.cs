@@ -81,11 +81,11 @@ namespace COSMIDENT.Repositories
             }
             return units;
         }
-        public List<Unit> GetItems(string SortProperty, SortOrder sortOrder,string SearchText="")
+        public PaginatedList<Unit> GetItems(string SortProperty, SortOrder sortOrder,string SearchText="", int pageIndex=1, int pageSize=5)
         {
             List<Unit> units;
 
-            if(SearchText != "")
+            if(SearchText != "" && SearchText!=null)
             {
                 units = _context.Units.Where(n=>n.Name.Contains(SearchText) || n.Description.Contains(SearchText) || n.Barcode.Contains(SearchText)).ToList();
             }
@@ -93,7 +93,10 @@ namespace COSMIDENT.Repositories
                 units = _context.Units.ToList();
 
             units = DoSort(units, SortProperty, sortOrder);
-            return units;
+
+            PaginatedList<Unit> retUnits = new PaginatedList<Unit>(units, pageIndex, pageSize);
+
+            return retUnits;
         }
 
         public Unit GetUnit(int id)
