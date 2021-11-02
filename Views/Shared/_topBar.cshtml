@@ -7,17 +7,17 @@
         .page-item.active .page-link {
             z-index:3;
             color:#fff;
-            background-color:red!important;
-            border-color:red;
+            background-color:darkgreen!important;
+            border-color:darkgreen;
         }
     </style>
 
-    <div class="container btn-group" style="background-color:black; border-radius:10px; height:45px;">
+    <div class="container btn-group" style="background-color:darkseagreen; border-radius:10px; height:45px;">
         <div class="col-4 p-0 justify-content-end mt-1 mb-3">
             <form asp-action="index">
                 <span class="btn-group">
                     <input class="form-control" type="text" name="SearchText" value="@ViewBag.SearchText" placeholder="Zoekwoord" />
-                    <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Zoeken" />
+                    <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;background-color:darkgreen!important;border-color:darkgreen!important; padding-left:30px;padding-right:30px;" type="submit" value="Zoeken" />
                 </span>
             </form>
         </div>

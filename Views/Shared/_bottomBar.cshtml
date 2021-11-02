@@ -1,6 +1,6 @@
 ﻿@model PagerModel
 
-<div class="container m-0 p-0 btn-group" style="background-color:black; border-radius:10px; height:45px; color:white;">
+<div class="container m-0 p-0 btn-group" style="background-color:darkseagreen; border-radius:10px; height:45px; color:white;">
     <div class="col-4 btn-group p-1 m-1">
         <p>
             Zie rij @Model.StartRecord tot @Model.EndRecord van de @Model.TotalItems rijen
@@ -20,7 +20,7 @@
 
     <div class="col-5 btn-group justify-content-end m-2">
         <p>
-            Pagina @Model.CurrentPage / @Model.TotalPages
+            Pagina @Model.CurrentPage / @Model.TotalPages &nbsp;&nbsp;
         </p>
     </div>
 </div>
