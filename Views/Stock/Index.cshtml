@@ -1,0 +1,89 @@
+﻿@model IEnumerable<COSMIDENT.Models.Unit>
+
+@{
+    ViewData["Title"] = "Stock";
+
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<h1>Stock</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Rapport</a>
+</p>
+
+<div class="col-4 p-0 justify-content-end mt-1 mb-3">
+    <form asp-action="index">
+        <span class="btn-group">
+            <input class="form-control" type="text" name="SearchText" value="@ViewBag.SearchText" placeholder="Zoekwoord" autofocus />
+            <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Zoeken" />
+        </span>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("barcode").SortExpression">
+                    @Html.DisplayNameFor(model => model.Barcode)
+                </a>
+                <i class="@sortModel.GetColumn("barcode").SortIcon" arial-hidden="true"></i>
+
+            </th>
+            <th>
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                    @*@Html.DisplayNameFor(model => model.Name)*@
+                    Naam
+                </a>
+                <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
+
+            </th>
+            <th>
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
+                    @*@Html.DisplayNameFor(model => model.Description)*@
+                    Beschrijving
+                </a>
+                <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
+            </th>
+            <th>
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("quantity").SortExpression">
+                    @*@Html.DisplayNameFor(model => model.Quantity)*@
+                    Hoeveelheid
+                </a>
+                <i class="@sortModel.GetColumn("quantity").SortIcon" arial-hidden="true"></i>
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Barcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            @*            <td>
+            <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">+</a>
+            <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">-</a>
+        </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-light">Wijzig</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Verwijder</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
