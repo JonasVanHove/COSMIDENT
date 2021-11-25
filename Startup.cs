@@ -14,6 +14,8 @@ using COSMIDENT.Models;
 using COSMIDENT.Data;
 using COSMIDENT.Interfaces;
 using COSMIDENT.Repositories;
+using COSMIDENT.Settings;
+using COSMIDENT.Services;
 
 namespace COSMIDENT
 {
@@ -29,9 +31,16 @@ namespace COSMIDENT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
+
             services.AddControllersWithViews();
             services.AddScoped<IUnit, UnitRepository>();
             services.AddScoped<ISupplier, SupplierRepository>();
+
+            services.AddCors(c => 
+            { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()); 
+            });
 
             // Connection
             // services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
