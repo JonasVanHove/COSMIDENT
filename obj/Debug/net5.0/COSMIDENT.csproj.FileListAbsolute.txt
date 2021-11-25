@@ -320,3 +320,4 @@ D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\MimeKit.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\NETCore.MailKit.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs
