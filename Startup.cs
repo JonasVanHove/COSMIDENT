@@ -35,7 +35,7 @@ namespace COSMIDENT
 
             // Connection
             // services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
-            services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
+            services.AddDbContext<InventoryContext>(options => options.UseMySQL(Configuration.GetConnectionString("dbconn")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

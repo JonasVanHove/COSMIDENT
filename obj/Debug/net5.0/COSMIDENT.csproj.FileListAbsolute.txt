@@ -316,3 +316,12 @@ D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\Razor\V
 D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Shared\_bottomBar.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Shared\_bottomBar.cshtml.g.cs
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Shared\_topBar.cshtml.g.cs
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\Google.Protobuf.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\MySql.Data.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\ZstdNet.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll

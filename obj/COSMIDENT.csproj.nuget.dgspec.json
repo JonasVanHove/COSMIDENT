@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Universiteit\\IT Factory\\Semester 3\\Digital Innovation\\2. Cosmident\\COSMIDENT\\COSMIDENT.csproj": {}
+    "D:\\school_jaar_3\\digital_innovation\\cosmident\\COSMIDENT\\COSMIDENT.csproj": {}
   },
   "projects": {
-    "D:\\Universiteit\\IT Factory\\Semester 3\\Digital Innovation\\2. Cosmident\\COSMIDENT\\COSMIDENT.csproj": {
+    "D:\\school_jaar_3\\digital_innovation\\cosmident\\COSMIDENT\\COSMIDENT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universiteit\\IT Factory\\Semester 3\\Digital Innovation\\2. Cosmident\\COSMIDENT\\COSMIDENT.csproj",
+        "projectUniqueName": "D:\\school_jaar_3\\digital_innovation\\cosmident\\COSMIDENT\\COSMIDENT.csproj",
         "projectName": "COSMIDENT",
-        "projectPath": "D:\\Universiteit\\IT Factory\\Semester 3\\Digital Innovation\\2. Cosmident\\COSMIDENT\\COSMIDENT.csproj",
-        "packagesPath": "C:\\Users\\Jonas Van Hove\\.nuget\\packages\\",
-        "outputPath": "D:\\Universiteit\\IT Factory\\Semester 3\\Digital Innovation\\2. Cosmident\\COSMIDENT\\obj\\",
+        "projectPath": "D:\\school_jaar_3\\digital_innovation\\cosmident\\COSMIDENT\\COSMIDENT.csproj",
+        "packagesPath": "C:\\Users\\gilli\\.nuget\\packages\\",
+        "outputPath": "D:\\school_jaar_3\\digital_innovation\\cosmident\\COSMIDENT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jonas Van Hove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gilli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,6 +59,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
             }
           },
           "imports": [
@@ -79,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
