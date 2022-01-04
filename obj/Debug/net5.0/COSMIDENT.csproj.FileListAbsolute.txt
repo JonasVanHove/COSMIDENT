@@ -321,3 +321,24 @@ D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\NETCore.MailKit.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\MailKit.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\MimeKit.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\NETCore.MailKit.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\Hangfire.AspNetCore.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\Hangfire.Core.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\Hangfire.MemoryStorage.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\ca\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\de\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\es\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\fa\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\fr\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\nb\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\nl\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\pt-BR\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\pt-PT\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\pt\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\tr-TR\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\zh-TW\Hangfire.Core.resources.dll
+D:\school_jaar_3\digital_innovation\cosmident\COSMIDENT\bin\Debug\net5.0\zh\Hangfire.Core.resources.dll
