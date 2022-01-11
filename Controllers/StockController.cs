@@ -154,6 +154,24 @@ namespace COSMIDENT.Controllers
             return View(unit);
         }
 
+        public IActionResult Update(int id)
+        {
+            Unit unit = _unitRepo.GetUnit(id);
+            return View(unit);
+        }
+
+        public IActionResult Plus(int id)
+        {
+            Unit unit = _unitRepo.GetUnit(id);
+            return View(unit);
+        }
+        
+        public IActionResult Min(int id)
+        {
+            Unit unit = _unitRepo.GetUnit(id);
+            return View(unit);
+        }
+
         [HttpPost]
         public IActionResult Edit(Unit unit)
         {

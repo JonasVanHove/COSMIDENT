@@ -13,5 +13,8 @@ namespace COSMIDENT.Interfaces
         Unit Create(Unit unit);
         Unit Edit(Unit unit);
         Unit Delete(Unit unit);
+        Unit Update(Unit unit);
+        Unit Plus(Unit unit);
+        Unit Min(Unit unit);
     }
 }
