@@ -48,14 +48,14 @@
                 </a>
                 <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
             </th>
-            <th>
-                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("quantity").SortExpression">
+            <!--<th>
+                <a style="color:black;" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("quantity").SortExpression">-->
                     @*@Html.DisplayNameFor(model => model.Quantity)*@
-                    Hoeveelheid
+                    <!--Hoeveelheid
                 </a>
                 <i class="@sortModel.GetColumn("quantity").SortIcon" arial-hidden="true"></i>
 
-            </th>
+            </th>-->
             @*            <th></th>
             *@
             <th></th>
@@ -73,9 +73,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
+            </td>*@
 @*            <td>
                 <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">+</a>
                 <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">-</a>
