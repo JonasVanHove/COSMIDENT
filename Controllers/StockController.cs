@@ -126,6 +126,22 @@ namespace COSMIDENT.Controllers
             return View(unit);
         }
 
+        public IActionResult Plus(int id)
+        {
+            Unit unit = _unitRepo.GetUnit(id);
+
+            //return View(unit);
+            return View(unit);
+        }
+
+        public IActionResult Min(int id)
+        {
+            Unit unit = _unitRepo.GetUnit(id);
+
+            //return View(unit);
+            return View(unit);
+        }
+
         [HttpPost]
         public IActionResult Create(Unit unit)
         {

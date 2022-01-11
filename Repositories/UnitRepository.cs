@@ -41,6 +41,22 @@ namespace COSMIDENT.Repositories
             return unit;
         }
 
+        public Unit Plus(Unit unit)
+        {
+            //_context.Units.Attach(unit);
+            //_context.Entry(unit).State = EntityState.Modified;
+            //_context.SaveChanges();
+            return unit;
+        }
+
+        public Unit Min(Unit unit)
+        {
+            //_context.Units.Attach(unit);
+            //_context.Entry(unit).State = EntityState.Modified;
+            //_context.SaveChanges();
+            return unit;
+        }
+
         private List<Unit> DoSort(List<Unit> units, string SortProperty, SortOrder sortOrder)
         {
             if (SortProperty.ToLower() == "name")

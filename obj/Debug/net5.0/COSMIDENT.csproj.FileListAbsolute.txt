@@ -358,3 +358,4 @@ D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\tr-TR\Hangfire.Core.resources.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\zh-TW\Hangfire.Core.resources.dll
 D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\bin\Debug\net5.0\zh\Hangfire.Core.resources.dll
+D:\Universiteit\IT Factory\Semester 3\Digital Innovation\2. Cosmident\COSMIDENT\obj\Debug\net5.0\Razor\Views\Stock\Plus.cshtml.g.cs
