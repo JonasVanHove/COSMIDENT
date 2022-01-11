@@ -116,7 +116,7 @@ namespace COSMIDENT.Controllers
 
             //units = units.Skip((pg - 1) * pageSize).Take(pageSize).ToList();
 
-
+            ViewBag.SearchText = "";
             return View(units);
         }
 
