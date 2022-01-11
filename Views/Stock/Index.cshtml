@@ -11,7 +11,7 @@
 <h1>Stock</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-success">Rapport</a>
+    <a asp-action="Rapport" class="btn btn-success">Rapport</a>
 </p>
 
 <div class="col-4 p-0 justify-content-end mt-1 mb-3">
@@ -80,17 +80,18 @@
         </td>*@
         <td>
             <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>    
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     @*<label asp-for="Quantity" class="control-label">Hoeveelheid</label>
-                    <input asp-for="Quantity" class="form-control" />
-                    <span asp-validation-for="Quantity" class="text-danger"></span>*@
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>*@
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Toevoegen" class="btn btn-light" />
                 </div>
             </form>
             @*<a asp-action="Custom" asp-route-id="@item.Id" class="btn btn-light">Custom</a> |*@
+
             <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">Plus</a>
             <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">Min</a>
         </td>
