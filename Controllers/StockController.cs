@@ -91,7 +91,7 @@ namespace COSMIDENT.Controllers
             return sortModel;
         }
 
-        public IActionResult Index(string sortExpression = "", string SearchText = "", int pageSize = 5, int pg = 1)
+        public IActionResult Index(string sortExpression = "", string SearchText = "", int pageSize = 500, int pg = 1)
         {
             SortModel sortModel = new SortModel();
 
