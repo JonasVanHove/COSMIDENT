@@ -162,14 +162,14 @@ namespace COSMIDENT.Controllers
 
         public IActionResult Plus(int id)
         {
-            Unit unit = _unitRepo.GetUnit(id);
-            return View(unit);
+            _unitRepo.Plus(id);
+            return RedirectToAction("Index");
         }
-        
+
         public IActionResult Min(int id)
         {
-            Unit unit = _unitRepo.GetUnit(id);
-            return View(unit);
+            _unitRepo.Min(id);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
