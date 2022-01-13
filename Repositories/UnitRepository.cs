@@ -49,20 +49,20 @@ namespace COSMIDENT.Repositories
             return unit;
         }
 
-        public Unit Plus(Unit unit)
+        public void Plus(int id)
         {
-            _context.Units.Attach(unit);
-            _context.Entry(unit).State = EntityState.Modified;
+            var unit = GetUnit(id);
+            unit.Quantity++;
+            _context.Units.Update(unit);
             _context.SaveChanges();
-            return unit;
         }
 
-        public Unit Min(Unit unit)
+        public void Min(int id)
         {
-            _context.Units.Attach(unit);
-            _context.Entry(unit).State = EntityState.Modified;
+            var unit = GetUnit(id);
+            unit.Quantity--;
+            _context.Units.Update(unit);
             _context.SaveChanges();
-            return unit;
         }
 
         private List<Unit> DoSort(List<Unit> units, string SortProperty, SortOrder sortOrder)
@@ -128,6 +128,5 @@ namespace COSMIDENT.Repositories
             Unit unit = _context.Units.Where(u => u.Id == id).FirstOrDefault();
             return unit;
         }
-
     }
 }

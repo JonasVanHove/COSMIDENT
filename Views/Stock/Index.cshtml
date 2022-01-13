@@ -75,12 +75,12 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
 
-        <td>
-            <input style="width: 3vw;" type="number" id="quantity" name="quantity">
-            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-light">Add</a>
-            <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">Plus</a>
-            <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">Min</a>
-        </td>
+            <td>
+                <input style="width: 3vw;" type="number" id="quantity" name="quantity">
+                <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-light">Add</a>
+                <a asp-action="Plus" asp-route-id="@item.Id" class="btn btn-success">Plus</a>
+                <a asp-action="Min" asp-route-id="@item.Id" class="btn btn-danger">Min</a>
+            </td>
         </tr>
 }
     </tbody>
