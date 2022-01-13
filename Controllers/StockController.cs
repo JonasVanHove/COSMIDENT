@@ -154,10 +154,10 @@ namespace COSMIDENT.Controllers
             return View(unit);
         }
 
-        public IActionResult Update(int id)
+        public IActionResult Add(int id, int value)
         {
-            Unit unit = _unitRepo.GetUnit(id);
-            return View(unit);
+            _unitRepo.Add(id, value);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Plus(int id)

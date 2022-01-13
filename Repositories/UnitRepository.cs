@@ -41,12 +41,12 @@ namespace COSMIDENT.Repositories
             return unit;
         }
 
-        public Unit Update(Unit unit)
+        public void Add(int id, int value)
         {
-            _context.Units.Attach(unit);
-            _context.Entry(unit).State = EntityState.Modified;
+            var unit = GetUnit(id);
+            unit.Quantity += value;
+            _context.Units.Update(unit);
             _context.SaveChanges();
-            return unit;
         }
 
         public void Plus(int id)
