@@ -13,7 +13,7 @@ namespace COSMIDENT.Interfaces
         Unit Create(Unit unit);
         Unit Edit(Unit unit);
         Unit Delete(Unit unit);
-        Unit Update(Unit unit);
+        void Add(int id, int value);
         void Plus(int id);
         void Min(int id);
     }
