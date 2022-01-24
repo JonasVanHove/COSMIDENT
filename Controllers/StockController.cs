@@ -172,6 +172,12 @@ namespace COSMIDENT.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Rapport()
+        {
+            _unitRepo.CheckStock();
+            return RedirectToAction(nameof(Index));
+        }
+
         [HttpPost]
         public IActionResult Edit(Unit unit)
         {

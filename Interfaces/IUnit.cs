@@ -16,5 +16,6 @@ namespace COSMIDENT.Interfaces
         void Add(int id, int value);
         void Plus(int id);
         void Min(int id);
+        void CheckStock();
     }
 }

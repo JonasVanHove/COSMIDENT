@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using COSMIDENT.Data;
 using COSMIDENT.Interfaces;
 using COSMIDENT.Models;
+using COSMIDENT.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace COSMIDENT.Repositories
@@ -12,10 +13,12 @@ namespace COSMIDENT.Repositories
     public class UnitRepository : IUnit
     {
         private readonly InventoryContext _context;
+        private readonly IMailService _mailService;
 
-        public UnitRepository(InventoryContext context)
+        public UnitRepository(InventoryContext context, IMailService mailService)
         {
             _context = context;
+            _mailService = mailService;
         }
 
         public Unit Create(Unit unit)
@@ -63,6 +66,18 @@ namespace COSMIDENT.Repositories
             unit.Quantity--;
             _context.Units.Update(unit);
             _context.SaveChanges();
+        }
+
+        public void CheckStock()
+        { if (_context.Units.Any(x => x.Quantity < 4)) {
+                MailRequest mailRequest = new MailRequest()
+                {
+                    Body = _mailService.CreateEmailBody(_context.Units.Where(x => x.Quantity < 4).ToList()),
+                    Subject = "Stockbeheer Cosmident",
+                    ToEmail = "r0741524@student.thomasmore.be"
+                };
+                _mailService.SendEmail(mailRequest);
+            }
         }
 
         private List<Unit> DoSort(List<Unit> units, string SortProperty, SortOrder sortOrder)

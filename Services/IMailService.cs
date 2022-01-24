@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace COSMIDENT.Services
 {
-    interface IMailService
+    public interface IMailService
     {
-        Task SendEmailAsync(MailRequest mailRequest);
+        void SendEmail(MailRequest mailRequest);
+        string CreateEmailBody(List<Unit> units);
     }
 }
