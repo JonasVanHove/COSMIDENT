@@ -79,17 +79,7 @@ namespace COSMIDENT.Repositories
             return suppliers;
         }
 
-        public List<Supplier> GetAllSuppliers()
-        {
-            List<Supplier> suppliers;
-
-
-
-            suppliers = _context.Suppliers.ToList();
-            
-            
-            return suppliers;
-        }
+        public List<Supplier> GetAllSuppliers() => _context.Suppliers.ToList();
 
         public Supplier GetSupplier(int id)
         {

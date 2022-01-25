@@ -13,6 +13,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>COSMIDENT.Data.InventoryContext</WebStackScaffolding_DbContextTypeFullName>
     <ActiveDebugProfile>COSMIDENT</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>Cosmident</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

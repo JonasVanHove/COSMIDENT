@@ -1,10 +1,7 @@
 ﻿using COSMIDENT.Interfaces;
 using COSMIDENT.Models;
 using COSMIDENT.Settings;
-using MailKit.Net.Smtp;
-using MailKit.Security;
 using Microsoft.Extensions.Options;
-using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.IO;
