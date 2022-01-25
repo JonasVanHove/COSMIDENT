@@ -14,9 +14,11 @@ namespace COSMIDENT.Controllers
     public class UnitController : Controller
     {
         private readonly IUnit _unitRepo;
-        public UnitController(IUnit unitrepo)
+        private readonly ISupplier _supplierRepo;
+        public UnitController(IUnit unitrepo, ISupplier supplierrepo)
         {
             _unitRepo = unitrepo;
+            _supplierRepo = supplierrepo;
         }
 
         private SortModel ApplySort(string sortExpression="")
@@ -126,6 +128,7 @@ namespace COSMIDENT.Controllers
         public IActionResult Create()
         {
             Unit unit = new Unit();
+            ViewBag.Suppliers = _supplierRepo.GetAllSuppliers();
             return View(unit);
         }
 
@@ -197,6 +200,7 @@ namespace COSMIDENT.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
 
     }
 }

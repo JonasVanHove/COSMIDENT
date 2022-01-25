@@ -74,7 +74,7 @@ namespace COSMIDENT.Repositories
                 {
                     Body = _mailService.CreateEmailBody(_context.Units.Where(x => x.Quantity < 4).ToList()),
                     Subject = "Stockbeheer Cosmident",
-                    ToEmail = "r0741524@student.thomasmore.be"
+                    ToEmail = "r0450988@student.thomasmore.be"
                 };
                 _mailService.SendEmail(mailRequest);
             }

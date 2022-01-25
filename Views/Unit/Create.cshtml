@@ -2,7 +2,8 @@
 
 @{
     ViewData["Title"] = "Toevoegen";
-}
+    SelectList suppliers = ViewBag.Suppliers as SelectList;
+ }
 
 <h1>Product toevoegen</h1>
 
@@ -51,9 +52,14 @@
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label asp-for="SupplierID" class="control-label">LeveranciersID</label>
                 <input asp-for="SupplierID" class="form-control" />
+                <span asp-validation-for="SupplierID" class="text-danger"></span>
+            </div-->
+            <div class="form-group">
+                <label asp-for="SupplierID" class="control-label">Kies een leverancier</label><br />
+                @Html.DropDownList("SupplierID", new SelectList(ViewBag.Suppliers, "Id", "SupplierName"))
                 <span asp-validation-for="SupplierID" class="text-danger"></span>
             </div>
             <div class="form-group">

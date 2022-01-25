@@ -73,7 +73,7 @@ namespace COSMIDENT.Controllers
 
             ViewBag.SearchText = SearchText;
 
-            List<Supplier> suppliers = _supplierRepo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder,SearchText); 
+            List<Supplier> suppliers = _supplierRepo.GetSuppliers(sortModel.SortedProperty, sortModel.SortedOrder,SearchText); 
             return View(suppliers);
         }
 

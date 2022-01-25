@@ -12,11 +12,11 @@ namespace COSMIDENT.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(60)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(75)]
+        [StringLength(100)]
         public string Description { get; set; }
 
         [StringLength(50)]
