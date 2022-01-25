@@ -59,7 +59,8 @@ namespace COSMIDENT.Services
                 var supplier = _supplierRepository.GetSupplier(unit.SupplierID);
                 unitList += $"<tr>" +
                 $"<td>{unit.Name}</td>" +
-                $"<td>{unit.Description}</td>" +
+                $"<td>{unit.Barcode}</td>" +
+                $"<td>{unit.Quantity}</td>" +
                 $"<td>{supplier.SupplierName}</td>" +
                 $"<td>{supplier.Email}</td>" +
                 $"<td>{supplier.MobilePhone}</td>" +
@@ -81,6 +82,7 @@ namespace COSMIDENT.Services
             "<tr>" +
             "<th> Product </th>" +
             "<th> Barcode </th>" +
+            "<th> Hoeveelheid </th>" +
             "<th> Leverancier </th>" +
             "<th> Leveranciermail </th>" +
             "<th> Leveranciertelefoon </th>" +

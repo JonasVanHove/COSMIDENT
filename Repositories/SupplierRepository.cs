@@ -64,7 +64,7 @@ namespace COSMIDENT.Repositories
             return suppliers;
         }
 
-        public List<Supplier> GetItems(string SortProperty, SortOrder sortOrder, string SearchText = "")
+        public List<Supplier> GetSuppliers(string SortProperty, SortOrder sortOrder, string SearchText = "")
         {
             List<Supplier> suppliers;
 
@@ -76,6 +76,18 @@ namespace COSMIDENT.Repositories
                 suppliers = _context.Suppliers.ToList();
 
             suppliers = DoSort(suppliers, SortProperty, sortOrder);
+            return suppliers;
+        }
+
+        public List<Supplier> GetAllSuppliers()
+        {
+            List<Supplier> suppliers;
+
+
+
+            suppliers = _context.Suppliers.ToList();
+            
+            
             return suppliers;
         }
 
