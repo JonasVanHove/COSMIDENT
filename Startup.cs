@@ -16,8 +16,6 @@ using COSMIDENT.Interfaces;
 using COSMIDENT.Repositories;
 using COSMIDENT.Settings;
 using COSMIDENT.Services;
-using Hangfire;
-using Hangfire.MemoryStorage;
 
 
 namespace COSMIDENT
@@ -50,20 +48,11 @@ namespace COSMIDENT
             //services.AddDbContext<InventoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("dbconn")));
             //services.AddDbContext<InventoryContext>(options => options.UseMySQL(Configuration.GetConnectionString("dbconn")));
 
-            //Hangfire
-            services.AddHangfire(config =>
-                config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
-                .UseSimpleAssemblyNameTypeSerializer()
-                .UseDefaultTypeSerializer()
-                .UseMemoryStorage());
-
-            services.AddHangfireServer();
-
-            services.AddSingleton<IPrintJob, PrintJob>();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobClient, IRecurringJobManager recurringJobManager, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -89,17 +78,7 @@ namespace COSMIDENT
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //Hangfire
-            app.UseHangfireDashboard();
-            backgroundJobClient.Enqueue(() => System.Diagnostics.Debug.WriteLine("Hello hangfire job"));
-            //recurringJobManager.AddOrUpdate(
-                //"Run every minute",
-                //() => serviceProvider.GetService<IPrintJob>().Print(),
-               // "* * * * * *"
-                //);
-
-            //Elke minuut bericht - printjob.cs - Dagelijks = Minutely vervangen door Daily
-            RecurringJob.AddOrUpdate("easyjob", () => serviceProvider.GetService<IPrintJob>().Print(), Cron.Minutely);
+            
         }
     }
 }
